@@ -6,9 +6,9 @@ const upload = multer()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-app.use(upload.any())
 
-app.post('/login', (req, res, next) => {
+
+app.post('/login', upload.any(), (req, res, next) => {
     console.log(req.body);
     res.end('用户登录成功')
 })

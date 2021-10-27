@@ -19,9 +19,13 @@ const upload = multer({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-app.use(upload.any())
 
-app.post('/upload', upload.single('file'), (req, res, next) => {
+app.post('/login', upload.any(), (req, res, next) => {
+    console.log(req.body);
+    res.end('用户登录成功')
+})
+
+app.post('/upload', upload.array('file'), (req, res, next) => {
     console.log(req.files[0]);
     res.end('文件上传成功')
 })
