@@ -10,7 +10,11 @@ app.get('/products/:id/:name', (req, res, next) => {
 })
 
 app.get('/login', (req, res, next) => {
-    console.log(req.query);
+
+    //设置响应码
+    res.status(204)
+
+    //设置内容
     // res.type('application/json')
     // res.end(JSON.stringify({ user: 'yyn', age: 18 }))
 
