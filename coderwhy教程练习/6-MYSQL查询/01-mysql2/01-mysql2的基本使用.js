@@ -19,5 +19,8 @@ GROUP BY stuId;
 
 connection.query(statement, (err, results, fields) => {
     console.log(results);
-    console.log(fields);
+    // connection.end()
 })
+// connection.on('error', err => {
+//     console.log(err);
+// })
